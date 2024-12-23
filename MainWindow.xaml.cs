@@ -19,6 +19,8 @@ namespace library_manager
 		public MainWindow()
 		{
 			InitializeComponent();
+			Book.LoadBooks();
+			User.LoadUsers();
 		}
 	}
 }

@@ -17,7 +17,7 @@ Hozz létre egy **Digitális Könyvtárkezelő Alkalmazást**, amely lehetővé 
 
 ### Főképernyő
 
-    A főképernyő tartalmazza:
+A főképernyő tartalmazza:
 
 -   **Bejelentkezés** : Felhasználóként vagy adminisztrátorként lehet belépni.
 -   **Regisztráció** : Új felhasználó létrehozása.
@@ -28,7 +28,7 @@ Hozz létre egy **Digitális Könyvtárkezelő Alkalmazást**, amely lehetővé 
 
 ### Regisztráció
 
-    Új felhasználó regisztrálásához az alábbi adatokat kell megadni:
+Új felhasználó regisztrálásához az alábbi adatokat kell megadni:
 
 -   **Felhasználónév** (egyedi kell legyen).
 -   **Jelszó** (legalább 8 karakter, tartalmazzon nagybetűt, kisbetűt és számot).
@@ -42,7 +42,7 @@ Hozz létre egy **Digitális Könyvtárkezelő Alkalmazást**, amely lehetővé 
 
 ### Könyvek kezelése
 
-    A belépés után a felhasználók hozzáférhetnek a következő funkciókhoz:
+A belépés után a felhasználók hozzáférhetnek a következő funkciókhoz:
 
 -   **Könyv felvétele:**
 
@@ -69,7 +69,7 @@ Hozz létre egy **Digitális Könyvtárkezelő Alkalmazást**, amely lehetővé 
 
 ### Fájlkezelés
 
-    Az alkalmazás fájlba menti az adatokat, hogy újraindítás után is elérhetők legyenek:
+Az alkalmazás fájlba menti az adatokat, hogy újraindítás után is elérhetők legyenek:
 
 -   **Felhasználók mentése:**
 
@@ -81,7 +81,7 @@ Hozz létre egy **Digitális Könyvtárkezelő Alkalmazást**, amely lehetővé 
 
 ### Adminisztrátor Jogosultságok
 
-    Az adminisztrátor a következő különleges jogokkal rendelkezik:
+Az adminisztrátor a következő különleges jogokkal rendelkezik:
 
 -   **Felhasználók listázása:**
 

@@ -28,7 +28,7 @@ namespace library_manager
 
 	    	public static bool ValidateUsername(string username)
 		{
-			return !Users.Any(u => u.Username == username)
+			return !Users.Any(u => u.Username == username);
 		}
 	    
 		public static bool ValidateEmail(string email)
@@ -45,8 +45,8 @@ namespace library_manager
 
 		public static void AddUser(string email, string username, string password)
 		{
-			if(!validateEmail(email)) throw new ArgumentException("Invalid email address.", nameof(email));
-			if (!validatePassword(password)) throw new ArgumentException("Invalid password.", nameof(password));
+			if(!ValidateEmail(email)) throw new ArgumentException("Invalid email address.", nameof(email));
+			if (!ValidatePassword(password)) throw new ArgumentException("Invalid password.", nameof(password));
 
 			Users.Add(new User(email, username, password));
 			User.SaveUsers();

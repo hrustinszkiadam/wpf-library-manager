@@ -26,13 +26,18 @@ namespace library_manager
 			return $"{Username} ({Email})";
 		}
 
-		public static bool validateEmail(string email)
+	    	public static bool ValidateUsername(string username)
+		{
+			return !Users.Any(u => u.Username == username)
+		}
+	    
+		public static bool ValidateEmail(string email)
 		{
 			Regex regex = new Regex(@"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$");
 			return regex.IsMatch(email);
 		}
 
-		public static bool validatePassword(string password)
+		public static bool ValidatePassword(string password)
 		{
 			Regex regex = new Regex(@"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$");
 			return regex.IsMatch(password);

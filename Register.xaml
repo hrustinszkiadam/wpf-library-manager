@@ -32,7 +32,7 @@
             <PasswordBox Grid.Column="1" Grid.Row="2" Name="Password" VerticalAlignment="Center" Width="200" Margin="5" />
 
             <Button Content="Regisztráció" Width="100" Grid.ColumnSpan="2" Grid.Column="0" Grid.Row="3" Margin="5, 15, 5, 5" Click="RegisterUser" />
-            <Button Content="Bejelentkezés" Width="75" Grid.ColumnSpan="2" Grid.Column="0" Grid.Row="4" Margin="5" Click="LoginPage" Opacity="0.75" />
+            <Button Content="Bejelentkezés" Name="LoginButton" Width="75" Grid.ColumnSpan="2" Grid.Column="0" Grid.Row="4" Margin="5" Click="LoginPage" Opacity="0.75" />
         </Grid>
     </Viewbox>
 </Page>

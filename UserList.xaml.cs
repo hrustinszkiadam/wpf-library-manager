@@ -36,7 +36,6 @@ namespace library_manager
 			{
 				ListBoxItem item = new ListBoxItem();
 				item.Content = user;
-				item.HorizontalContentAlignment = HorizontalAlignment.Center;
 				UserListBox.Items.Add(item);
 			}
 			UserListBox.SelectedItem = null;

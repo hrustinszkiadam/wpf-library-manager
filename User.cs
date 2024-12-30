@@ -79,6 +79,7 @@ namespace library_manager
 			foreach (string line in lines)
 			{
 				string[] parts = line.Split(';');
+				if (parts.Length != 3) continue;
 				User user = new User(parts[0], parts[1], parts[2]);
 				Users.Add(user);
 			}

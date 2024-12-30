@@ -21,7 +21,9 @@ namespace library_manager
 			InitializeComponent();
 			Book.LoadBooks();
 			User.LoadUsers();
-			MainFrame.Navigate(new Login());
+
+			if(User.Users.Count == 0) MainFrame.Navigate(new Register());
+			else MainFrame.Navigate(new Login());
 		}
 	}
 }

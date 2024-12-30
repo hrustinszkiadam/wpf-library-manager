@@ -9,15 +9,6 @@
       Title="UserList">
 
     <Viewbox Stretch="Uniform">
-        <ListBox Name="UserListBox" BorderThickness="0" SelectionChanged="UserSelected">
-            <ListBox.ItemTemplate>
-                <DataTemplate>
-                    <StackPanel Orientation="Horizontal">
-                        <TextBlock Text="{Binding Username}" Width="100" />
-                        <TextBlock Text="{Binding Email}" Width="200" />
-                    </StackPanel>
-                </DataTemplate>
-            </ListBox.ItemTemplate>
-        </ListBox>
+        <ListBox Name="UserListBox" BorderThickness="0" SelectionChanged="UserSelected" HorizontalContentAlignment="Center"/>
     </Viewbox>
 </Page>

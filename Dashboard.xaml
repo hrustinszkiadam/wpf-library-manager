@@ -14,14 +14,20 @@
                 <ColumnDefinition Width="Auto"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
-            
-            <StackPanel Orientation="Vertical" Grid.Column="0" Width="100">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <StackPanel Orientation="Vertical" Grid.Column="0" Grid.Row="0" Width="100">
+                <Button Content="Könyvek" Width="75" Click="BookListPage" Margin="0,2.5"/>
+                <Button Content="Könyv Hozzáadása" Width="75" Click="AddBook" FontSize="8.5" Margin="0,2.5"/>
                 <StackPanel Orientation="Vertical" Name="AdminControls" Visibility="Hidden">
-                    <Button Content="Felhasználók" Width="75" Click="UserListPage"/>
+                    <Button Content="Felhasználók" Width="75" Click="UserListPage" Margin="0,2.5"/>
                 </StackPanel>
-                <Button Content="Kijelentkezés" Width="75" Click="Logout"/>
             </StackPanel>
-            <Frame Name="DashboardFrame" Grid.Column="1" Width="200" />
+            <Button Content="Kijelentkezés" Width="75" Click="Logout" Grid.Column="0" Grid.Row="1" Margin="0,50,0,0" />
+            <Frame Name="DashboardFrame" Grid.Column="1" Width="200" Grid.RowSpan="2" />
         </Grid>
     </Viewbox>
 </Page>

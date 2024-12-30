@@ -28,11 +28,16 @@ namespace library_manager
 			if(loggedInUser.IsAdmin) AdminControls.Visibility = Visibility.Visible;
 		}
 
-		//TODO
-		//Könyv felvétele
-		//Könyvek listázása
-		//könyvek szerkesztése (csak admin) - egy ListBox kattintásával a listában
-		//könyvek törlése (csak admin) - egy ListBox kattintásával a listában
+		private void AddBook(object sender, RoutedEventArgs e)
+		{
+			DashboardFrame.Navigate(new BookForm());
+		}
+
+		private void BookListPage(object sender, RoutedEventArgs e)
+		{
+			DashboardFrame.Navigate(new BookList(LoggedInUser));
+		}
+
 		private void UserListPage(object sender, RoutedEventArgs e)
 		{
 			DashboardFrame.Navigate(new UserList(LoggedInUser));

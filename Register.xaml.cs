@@ -23,6 +23,8 @@ namespace library_manager
 		public Register()
 		{
 			InitializeComponent();
+
+			if(User.Users.Count == 0) LoginButton.Visibility = Visibility.Hidden;
 		}
 
 		private void RegisterUser(object sender, RoutedEventArgs e)

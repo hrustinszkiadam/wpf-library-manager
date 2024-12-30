@@ -13,7 +13,7 @@ namespace library_manager
 
 		public User(string email, string username,string password)
 		{
-			if (Users.Any(u => u.Username == username || u.Email == email)) throw new ArgumentException("User already exists.", $"{nameof(email)}, {nameof(username)}");
+			if (Users.Any(u => u.Username == username || u.Email == email)) throw new ArgumentException("A felhasználónév vagy email cím már foglalt.");
 
 			Email = email;
 			Username = username;
@@ -26,7 +26,7 @@ namespace library_manager
 			return $"{Username} ({Email})";
 		}
 
-	    	public static bool ValidateUsername(string username)
+	    public static bool ValidateUsername(string username)
 		{
 			return !Users.Any(u => u.Username == username);
 		}
@@ -37,6 +37,11 @@ namespace library_manager
 			return regex.IsMatch(email);
 		}
 
+		public static bool CheckDuplicateEmail(string email)
+		{
+			return !Users.Any(u => u.Email == email);
+		}
+
 		public static bool ValidatePassword(string password)
 		{
 			Regex regex = new Regex(@"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$");
@@ -45,8 +50,10 @@ namespace library_manager
 
 		public static void AddUser(string email, string username, string password)
 		{
-			if(!ValidateEmail(email)) throw new ArgumentException("Invalid email address.", nameof(email));
-			if (!ValidatePassword(password)) throw new ArgumentException("Invalid password.", nameof(password));
+			if(!ValidateEmail(email)) throw new ArgumentException("Hibás email cím!");
+			if (!ValidatePassword(password)) throw new ArgumentException("Nem elég erős a jelszó\n(Min 8 karakter, Min 1 kisbetű, Min 1 nagybetű, Min 1 szám)!");
+			if (!ValidateUsername(username)) throw new ArgumentException("A felhasználónév már foglalt!");
+			if (!CheckDuplicateEmail(email)) throw new ArgumentException("Az email cím már foglalt!");
 
 			Users.Add(new User(email, username, password));
 			User.SaveUsers();
@@ -54,8 +61,7 @@ namespace library_manager
 
 		public static void RemoveUser(User user, User caller)
 		{
-			if(!caller.IsAdmin) throw new UnauthorizedAccessException("Only admins can remove users.");
-			if(user.Username == caller.Username) throw new UnauthorizedAccessException("You cannot remove yourself.");
+			if(user.Username == caller.Username) throw new UnauthorizedAccessException("Nem törölheted magadat!");
 
 			Users.Remove(user);
 			User.SaveUsers();

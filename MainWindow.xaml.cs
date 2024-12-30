@@ -21,6 +21,7 @@ namespace library_manager
 			InitializeComponent();
 			Book.LoadBooks();
 			User.LoadUsers();
+			MainFrame.Navigate(new Login());
 		}
 	}
 }

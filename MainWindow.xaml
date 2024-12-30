@@ -6,7 +6,5 @@
         xmlns:local="clr-namespace:library_manager"
         mc:Ignorable="d"
         Title="Könyvtárkezelő" Height="450" Width="800" ResizeMode="CanResize" SizeToContent="Manual">
-    <Grid>
-
-    </Grid>
+    <Frame Name="MainFrame" NavigationUIVisibility="Hidden" />
 </Window>
